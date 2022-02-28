@@ -7,7 +7,7 @@ const data = {
         'I am always cute.',
         'I am hot as well.',
         'I am very sweet, like gulab jamun :P',
-        'I have b_m to die for! :P',
+        'I have a b_m to die for! :P',
         'Anddd, I am always hungry!!'
     ],
 };
