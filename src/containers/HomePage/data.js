@@ -6,7 +6,7 @@ const data = {
         'I keep nerding in my free time.',
         'I am always cute.',
         'I am hot as well.',
-        'I am insensitive sometimes :P',
+        'I have a very sweet, like gulab jamun :P',
         'Anddd, I am always hungry!!'
     ],
 };
