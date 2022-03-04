@@ -1,17 +1,31 @@
-import {useState} from 'react';
-import data from './data';
+import {useState, useEffect} from 'react';
+// import data from './data';
+import {loadData} from './data';
 import ListElement from './components/ListElement';
+import './index.css';
 
 const HomePage = () => {
-    const [dataInState, changeData] = useState(data);
+    const [dataInState, changeData] = useState({});
     const [knowMore, setKnowMore] = useState(false);
+
+    useEffect(() => {
+
+    if(knowMore) loadData(changeData);
+
+    },[knowMore]);
+
+    const handleOnClick = () => {
+        setKnowMore(!knowMore);
+        // you can also call apis here, based on action.
+    }
+
     const {name = '',description = '', hobbies = []} = dataInState;
 
     return(
         <div>
-            <h2>Hiii, I am {name}</h2>
+            <button onClick={handleOnClick}>Click here to {!knowMore?'load data':'Close'}</button>
+            <h2>{name}</h2>
             <p>{description}</p>
-            <button onClick={() => {setKnowMore(!knowMore)}}>Click here to {!knowMore?'Know More!':'Close'}</button>
             {knowMore &&
             <ul>
                 {hobbies.map((item) => {
